@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/dimenLv3"
+    android:paddingTop="@dimen/dimenLv2"
+    android:paddingBottom="@dimen/dimenLv2">
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/textSizeBodyMedium"
+        app:layout_constraintBottom_toTopOf="@id/viewSeparate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="13:00" />
+
+    <View
+        android:id="@+id/viewSeparate"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dimenLv2"
+        android:background="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="@id/tvTime"
+        app:layout_constraintStart_toStartOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+    <TextView
+        android:id="@+id/tvMiniTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimenLv2"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/textSizeBodyMedium"
+        app:layout_constraintEnd_toEndOf="@id/tvTime"
+        app:layout_constraintStart_toStartOf="@id/tvTime"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparate"
+        tools:text="30.5" />
+
+    <TextView
+        android:id="@+id/tvMiniDegree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/degree"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toTopOf="@id/tvMiniTemperature"
+        app:layout_constraintStart_toEndOf="@id/tvMiniTemperature"
+        app:layout_constraintTop_toTopOf="@id/tvMiniTemperature" />
+</androidx.constraintlayout.widget.ConstraintLayout>

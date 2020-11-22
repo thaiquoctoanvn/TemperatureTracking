@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TemperatureTracking</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="defaultTitle">Title</string>
+    <string name="good_morning">Chào buổi sáng!</string>
+    <string name="good_afternoon">Buổi trưa vui vẻ.</string>
+    <string name="good_evening">Buổi tối vui vẻ.</string>
+    <string name="alert_lv_2">Nhiệt độ rất lạnh đấy, cẩn thận bị cóng đấy. Hãy mặc nhiều áo ấm!</string>
+    <string name="alert_lv_1">Nhiệt độ mát, dễ chịu nhưng hãy cẩn thận cảm cúm nhé!</string>
+    <string name="alert_lv0">Nhiệt độ hiện tại ở mức tốt, cứ vui vẻ.</string>
+    <string name="alert_lv1">Nhiệt độ đang nóng dần lên đấy, hãy bật quạt hoặc điều hòa. Khi ra ngoài bạn nhớ che dù.</string>
+    <string name="alert_lv2">Nguy hiểm! Nhiệt độ hiện quá cao, nên ở trong bóng mát, tránh đi dưới ánh nắng.</string>
+    <string name="no_data">* Tạm thời chưa có dữ liệu</string>
+    <string name="current_no_data">Chưa có dữ liệu nhiệt độ hiện tại..</string>
+    <string name="degree">o</string>
+    <string name="app_version">v1.0</string>
+    <string name="app_decryption">Temperature tracking</string>
+    <string name="slogan">| We care about your health</string>
+    <string name="our_team">Đội ngũ chúng tôi</string>
+    <string name="current_days">Các ngày gần đây</string>
+</resources>

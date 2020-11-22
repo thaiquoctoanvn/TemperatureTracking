@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="buttonLowPriority">42px</dimen>
+    <dimen name="buttonMediumPriority">60px</dimen>
+    <dimen name="buttonHighPriority">72px</dimen>
+    <dimen name="dimenLv0">4dp</dimen>
+    <dimen name="dimenLv1">8dp</dimen>
+    <dimen name="dimenLv2">16dp</dimen>
+    <dimen name="dimenLv3">24dp</dimen>
+    <dimen name="dimenLv4">32dp</dimen> <!--circle corner-->
+    <dimen name="dimenLv5">40dp</dimen>
+    <dimen name="dimenLv6">48dp</dimen>
+    <dimen name="dimenLv7">56dp</dimen>
+    <dimen name="dimenLv8">64dp</dimen>
+    <dimen name="dimenLv9">72dp</dimen>
+    <dimen name="dimenLv10">80dp</dimen>
+    <dimen name="textSizeButton">16sp</dimen>
+    <dimen name="textSizeBodyTiny">14sp</dimen>
+    <dimen name="textSizeBodySmall">16sp</dimen>
+    <dimen name="textSizeBodyMedium">20sp</dimen>
+    <dimen name="textSizeHeaderSmall">20sp</dimen>
+    <dimen name="textSizeHeaderMedium">24sp</dimen>
+    <dimen name="textSizeHeaderLarge">30sp</dimen>
+    <dimen name="textSizeHeaderGiant">100sp</dimen>
+    <dimen name="textPadding">12dp</dimen>
+    <dimen name="iconPadding">10dp</dimen>
+</resources>

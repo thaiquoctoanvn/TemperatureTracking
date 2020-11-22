@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "255581336048",
+    "firebase_url": "https://temperaturetracking-75d7b.firebaseio.com",
+    "project_id": "temperaturetracking-75d7b",
+    "storage_bucket": "temperaturetracking-75d7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:255581336048:android:039465fcb6bd6b4900ad35",
+        "android_client_info": {
+          "package_name": "com.example.temperaturetracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "255581336048-7sa5mf1qvpnd35gdg14csrjeh7uhmpti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgZ3LxuMm4GmPEaZhn6eOWrqXTMDrWgJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "255581336048-7sa5mf1qvpnd35gdg14csrjeh7uhmpti.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

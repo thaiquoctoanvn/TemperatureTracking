@@ -11,6 +11,7 @@ import android.text.TextUtils
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.temperaturetracking.R
+import kotlin.random.Random
 
 class NotificationHelper(private val context: Context, private val notificationManager: NotificationManager) {
 
@@ -55,20 +56,43 @@ class NotificationHelper(private val context: Context, private val notificationM
             ConstantHelper.CHANNEL_ID
         )
             .setSmallIcon(icon)
-            .setContentTitle(ConstantHelper.NOTIFICATION_TITLE)
-            .setContentText(message)
+            .setContentTitle("${ConstantHelper.NOTIFICATION_TITLE} | $message")
+            .setContentText(generateMessageNotification(message))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
 
-        notificationManager.notify(ConstantHelper.NOTIFICATION_ID, notificationBuilder.build())
+        notificationManager.notify(Random.nextInt(10, 999), notificationBuilder.build())
     }
 
-    private fun wakeUpScreen() {
+    fun wakeUpScreen() {
         val powerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
-        if (powerManager.isInteractive) {
+        if(!powerManager.isInteractive) {
+            // Tag mặc định nên là "myApp:notificationLock"
+            val wakeLock = powerManager.
+            newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK or PowerManager.ACQUIRE_CAUSES_WAKEUP, "myApp:notificationLock")
+            wakeLock.acquire(5000)
+        }
+    }
 
+    private fun generateMessageNotification(temperature: String): String {
+        return when (temperature.toFloat()) {
+            in 0.0..19.9 -> {
+                context.getString(R.string.alert_lv_2)
+            }
+            in 20.0..28.0 -> {
+                context.getString(R.string.alert_lv_1)
+            }
+            in 29.0..37.5 -> {
+                context.getString(R.string.alert_lv0)
+            }
+            in 37.6..39.0 -> {
+                context.getString(R.string.alert_lv1)
+            }
+            else -> {
+                context.getString(R.string.alert_lv2)
+            }
         }
     }
 }

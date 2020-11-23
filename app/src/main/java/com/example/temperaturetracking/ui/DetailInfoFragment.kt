@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import com.example.temperaturetracking.R
 import kotlinx.android.synthetic.main.fragment_detail_info.*
 
+/*
+* KHÔNG DÙNG TỚI
+* */
 class DetailInfoFragment : Fragment() {
 
     override fun onCreateView(

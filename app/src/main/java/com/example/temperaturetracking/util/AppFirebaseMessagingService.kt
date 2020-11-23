@@ -3,6 +3,7 @@ package com.example.temperaturetracking.util
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.os.PowerManager
 import android.util.Log
 import com.example.temperaturetracking.ui.MainActivity
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -19,6 +20,7 @@ class AppFirebaseMessagingService : FirebaseMessagingService() {
         storeTokenToPre(token)
     }
 
+    // LẮNG NGHE THÔNG BÁO TỪ SERVER
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
         if(message != null) {
@@ -39,7 +41,7 @@ class AppFirebaseMessagingService : FirebaseMessagingService() {
             notificationManager = this.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         }
         if(!this::notificationHelper.isInitialized) {
-            notificationHelper = NotificationHelper(this.applicationContext, notificationManager)
+            notificationHelper = NotificationHelper(applicationContext, notificationManager)
         }
 
         val param: Map<String, String> = message.data
@@ -57,6 +59,8 @@ class AppFirebaseMessagingService : FirebaseMessagingService() {
             sendBroadcast(pushIntent)
 
             val actionIntent = Intent(this, MainActivity::class.java)
+
+            notificationHelper.wakeUpScreen()
             notificationHelper.showNotificationMessage(id.toInt(), content, actionIntent)
 
         }

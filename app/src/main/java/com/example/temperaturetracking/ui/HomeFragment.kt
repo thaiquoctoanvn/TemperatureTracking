@@ -33,13 +33,15 @@ class HomeFragment : Fragment() {
 
     private lateinit var responseBroadcast: BroadcastReceiver
     private lateinit var temperatureAdapter: TemperatureAdapter
+    private lateinit var rootView: View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        rootView = inflater.inflate(R.layout.fragment_home, container, false)
+        return rootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -50,7 +52,7 @@ class HomeFragment : Fragment() {
         setViewOnClickListener()
         sayGreeting()
         temperatureViewModel.registerToFCM()
-        temperatureViewModel.getLatestTemperature()
+        temperatureViewModel.getLatestTemperature(rootView)
         temperatureViewModel.getCurrentThreeDays()
     }
 
@@ -193,7 +195,7 @@ class HomeFragment : Fragment() {
         swipeLayout.setOnRefreshListener {
             swipeLayout.setColorSchemeResources(R.color.colorPrimaryDark, R.color.colorStatusBar)
             temperatureViewModel.getCurrentThreeDays()
-            temperatureViewModel.getLatestTemperature()
+            temperatureViewModel.getLatestTemperature(rootView)
         }
     }
 }

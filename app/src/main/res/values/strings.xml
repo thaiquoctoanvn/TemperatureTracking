@@ -19,5 +19,5 @@
     <string name="app_decryption">Temperature tracking</string>
     <string name="slogan">| We care about your health</string>
     <string name="our_team">Đội ngũ chúng tôi</string>
-    <string name="current_days">Các ngày gần đây</string>
+    <string name="current_days">Các ngày gần đây:</string>
 </resources>

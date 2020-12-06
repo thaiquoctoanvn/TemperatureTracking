@@ -1,6 +1,9 @@
 package com.example.temperaturetracking.ui
 
+import android.content.Context
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +11,7 @@ import com.example.temperaturetracking.data.entity.Date
 import com.example.temperaturetracking.data.entity.TemperatureItem
 import com.example.temperaturetracking.data.repository.TemperatureRepository
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.ktx.messaging
@@ -42,15 +46,24 @@ class TemperatureViewModel(private val temperatureRepository: TemperatureReposit
     }
 
     fun getCurrentThreeDays() {
-        viewModelScope.launch {
-            val res = temperatureRepository.getCurrentThreeDays().body()
-            if(res != null) {
-                currentThreeDays.value = res
+        try {
+            viewModelScope.launch {
+                val res = temperatureRepository.getCurrentThreeDays().body()
+                if(res != null) {
+                    currentThreeDays.value = res
+                }
             }
+        } catch (e: Exception) {
+            Log.d("###", "Error 2: ${e.message}")
         }
     }
 
     suspend fun getTemperatureOfDate(position: Int) {
+        try {
+
+        } catch (e: Exception) {
+            Log.d("###", "Error 3: ${e.message}")
+        }
         viewModelScope.launch {
             var date = ""
             if(currentThreeDays.value != null) {
@@ -71,12 +84,17 @@ class TemperatureViewModel(private val temperatureRepository: TemperatureReposit
         }
     }
 
-    fun getLatestTemperature() {
-        viewModelScope.launch {
-            val res = temperatureRepository.getLatestTemperature().body()
-            if(res != null) {
-                latestTemperature.value = res
+    fun getLatestTemperature(view: View) {
+        try {
+            viewModelScope.launch {
+                val res = temperatureRepository.getLatestTemperature().body()
+                if(res != null) {
+                    latestTemperature.value = res
+                }
             }
+        } catch (e: Exception) {
+            Log.d("###", "Error 1: ${e.message}")
+            Snackbar.make(view.findViewById(android.R.id.content), "Oops! Something wrong, check your internet", Snackbar.LENGTH_LONG).show()
         }
     }
 }
